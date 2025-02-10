@@ -22,45 +22,50 @@ public class PriorityQueueTester
 {
     public static void main(String[] args)
     {
+        //priortiy queue creation
         PriorityQueue pq = new PriorityQueue();
-    
+        //trying dangerous code
         try
         {
+            //search for file
             File file = new File("netflix_titles_short.csv");
-            
+            //run scanner through file
             Scanner token = new Scanner(file);
-            token.nextLine();                       
+            token.nextLine();
+            //run while file still has next line
             while(token.hasNext())                  
             {
                 String line = token.nextLine();              
-
+                //spliting line using ';'
                 String tmp[] = line.split(";"); 
-              
+                //storing parts split
                 String type = tmp[0];
                 String title = tmp[1];
                 int releaseYear = Integer.parseInt(tmp[2]);
                 int rating = Integer.parseInt(tmp[3]);
-              
+                //storing elements in new priority queue node object
                 PriorityQueueNode node = new PriorityQueueNode(type, title, releaseYear, rating);
+                //add to object
                 pq.add(node);             
              }
-             token.close();
-                     
+            //close scanner
+            token.close();         
         }
-            
+        //catching file exception
         catch(FileNotFoundException e)
         {
+            //printing error
             System.out.println(e.getMessage());
             System.exit(0);
         }
          
-        /* driver program to test your code: do not modify below*/        
+        //driver program to test your code: do not modify below
         System.out.println("What is the size of the PQ?");
-        System.out.println(pq.getSize()); // [ 1 mark if output is correct ]
+        System.out.println(pq.getSize());
         System.out.println();
         System.out.println("Formatted tree-representation of the PQ: ");
         System.out.println();
-        pq.display(); // [ 1 mark if output is correct ]
+        pq.display();
         System.out.println();
         System.out.println("-----end of program-----");
     }
