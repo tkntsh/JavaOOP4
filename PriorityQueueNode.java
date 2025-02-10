@@ -16,19 +16,20 @@ package Application;
 
 public class PriorityQueueNode 
 {
+    //attributes
     private String type;
     private String title;
     private int releaseYear;
     private int rating;
-
-     public PriorityQueueNode()
-     {
-         this.type = "";
-         this.title = "";
-         this.releaseYear = 0;
-         this.rating = 0;
-     }
-    
+    //default constructor
+    public PriorityQueueNode()
+    {
+        this.type = "";
+        this.title = "";
+        this.releaseYear = 0;
+        this.rating = 0;
+    }
+    //constructor
     public PriorityQueueNode(String type, String title, int releaseYear, int rating) 
     {
         this.type = type;
@@ -36,36 +37,44 @@ public class PriorityQueueNode
         this.releaseYear = releaseYear;
         this.rating = rating;
     }
-
-    public String getType() {
+    //getter and setter methods
+    public String getType() 
+    {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(String type) 
+    {
         this.type = type;
     }
 
-    public String getTitle() {
+    public String getTitle() 
+    {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title) 
+    {
         this.title = title;
     }
 
-    public int getReleaseYear() {
+    public int getReleaseYear() 
+    {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(int releaseYear) 
+    {
         this.releaseYear = releaseYear;
     }
 
-    public int getRating() {
+    public int getRating() 
+    {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(int rating) 
+    {
         this.rating = rating;
     }
 }
