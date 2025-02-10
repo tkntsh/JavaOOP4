@@ -19,14 +19,14 @@ import java.util.NoSuchElementException;
 
 public class PriorityQueue 
 {
-    /* attributes */
-    private int currentSize; // Number of elements in heap
-    private PriorityQueueNode [ ] PQ; // The priority queue array
+    //attributes
+    private int currentSize;
+    private PriorityQueueNode [] PQ;
     private static final int DEFAULT_CAPACITY = 2>>14; 
-    private Comparator<? super PriorityQueueNode> cmp; // object to compare to instances of PriorityQueueNode
+    private Comparator<? super PriorityQueueNode> cmp;
 
-    /* default constructor */
-    public PriorityQueue( )
+    //default constructor
+    public PriorityQueue()
     { 
         currentSize = 0;
         cmp = null;
@@ -34,16 +34,15 @@ public class PriorityQueue
     }
     
     
-    /* getter methods for attributes */
+    //getter methods for attributes
     public int getSize( )
     { 
         return currentSize; 
     }
     
-   /* methods from Practical 4 (Phase 3) */
-    public boolean add( PriorityQueueNode x ) // [ 4 marks ]
-    { 
-        // insert code here
+    //(Phase 3)
+    public boolean add(PriorityQueueNode x)
+    {
         int size=0;
         
         //checking if priority queue is full
@@ -66,7 +65,7 @@ public class PriorityQueue
         return false;
     }
 
-    public PriorityQueueNode remove( ) // [ 2 marks ]
+    public PriorityQueueNode remove()
     { 
         //the following code removes the max element of the priority queue
         PriorityQueueNode minItem = element();
@@ -79,7 +78,7 @@ public class PriorityQueue
         return minItem;
     }
     
-    private void percolateDown( int hole ) // [ 6 marks ]
+    private void percolateDown(int hole)
     { 
         //the following code takes the postion of next node
         int child = 0;
@@ -106,7 +105,7 @@ public class PriorityQueue
         PQ[hole] = tmp;
     }
     
-    public void display() // [ 6 marks ]
+    public void display()
     {
         //code below displays the priority queue in tree format
         for(int i = 0; i<=currentSize; i++)
@@ -137,8 +136,8 @@ public class PriorityQueue
         }
     }
     
-    /* auxiliary methods: you may use the below methods to help you write your code, if necessary */
-    private int compare( PriorityQueueNode lhs, PriorityQueueNode rhs )
+    //auxiliary methods below
+    private int compare(PriorityQueueNode lhs, PriorityQueueNode rhs)
     { 
         if(cmp == null)
         {
